@@ -1,6 +1,7 @@
 import { Action, AppearDisappearEvent, BaseAction, KeyEvent } from '@stream-deck-for-node/sdk'
 import { sd } from '../index'
 import { log } from '../log'
+import { initHistory, historySVG } from './cpuload'
 
 @Action('cpu-history')
 export class SampleAction extends BaseAction {
@@ -8,6 +9,7 @@ export class SampleAction extends BaseAction {
 
 	onAppear(e: AppearDisappearEvent) {
 		log('Appear ' + JSON.stringify(e))
+		initHistory(144, 144)
 		this.intervalId = setInterval(_ => this.updateButton(e.context), 1000)
 	}
 
@@ -17,6 +19,9 @@ export class SampleAction extends BaseAction {
 	}
 
 	updateButton(ctx: string) {
+		let svg = historySVG()
+		if (!svg) return
+		sd.setImage(ctx, 'data:image/svg+xml;charset=utf8,' + svg)
 		//sd.setTitle(ctx, 'X ' + ++counter)
 	}
 }
