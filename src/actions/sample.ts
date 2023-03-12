@@ -1,26 +1,20 @@
 import { Action, AppearDisappearEvent, BaseAction, KeyEvent } from '@stream-deck-for-node/sdk'
 import { sd } from '../index'
+import { log } from '../log'
 
 let counter = 0
 
 @Action('sample-action')
 export class SampleAction extends BaseAction {
-	ctx: string
-	visible = false
 	intervalId: NodeJS.Timer
 
-	constructor() {
-		super()
-		this.intervalId = setInterval(_ => this.updateButton(), 1000)
-	}
-
 	onAppear(e: AppearDisappearEvent) {
-		this.ctx = e.context
-		this.visible = true
+		log('Appear ' + JSON.stringify(e))
+		this.intervalId = setInterval(_ => this.updateButton(e.context), 1000)
 	}
 
-	onDisappear() {
-		this.visible = false
+	onDisappear(e: AppearDisappearEvent) {
+		log('Disappear ' + JSON.stringify(e))
 		if (this.intervalId) clearInterval(this.intervalId)
 	}
 
@@ -28,8 +22,7 @@ export class SampleAction extends BaseAction {
 		sd.setTitle(e.context, 'Tap ' + ++counter)
 	}
 
-	updateButton() {
-		if (!this.visible) return
-		sd.setTitle(this.ctx, 'X ' + ++counter)
+	updateButton(ctx: string) {
+		sd.setTitle(ctx, 'X ' + ++counter)
 	}
 }
