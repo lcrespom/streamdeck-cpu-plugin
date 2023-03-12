@@ -28,9 +28,7 @@ export class SampleAction extends BaseAction {
 	}
 }
 
-const THE_SVG = `
-
-<svg width="144" height="144">
+const THE_SVG = `<svg width="144" height="144">
 <line x1="0" y1="144" x2="0" y2="144" stroke="#F00" /><line x1="0" y1="144" x2="0" y2="144" stroke="#0F0" />
 <line x1="1" y1="144" x2="1" y2="144" stroke="#F00" /><line x1="1" y1="144" x2="1" y2="144" stroke="#0F0" />
 <line x1="2" y1="144" x2="2" y2="144" stroke="#F00" /><line x1="2" y1="144" x2="2" y2="144" stroke="#0F0" />
