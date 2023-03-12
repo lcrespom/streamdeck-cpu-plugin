@@ -1,31 +1,31 @@
 {
-  "Name": "com.lcrespom.cpu",
-  "Author": "Luis Crespo (lcrespom@gmail.com)",
-  "Description": "A CPU meter",
-  "Icon": "./icons/pluginIcon",
-  "Version": "1.0.0",
-  "SDKVersion": 2,
-  "Software": {
-    "MinimumVersion": "5.0"
-  },
-  "OS": [
-    {
-      "Platform": "mac",
-      "MinimumVersion": "10.11"
-    }
-  ],
-  "CodePathMac": "com.lcrespom.cpu",
-  "Actions": [
-    {
-      "Icon": "icons/actionIcon",
-      "Name": "Sample Action",
-      "States": [
-        {
-          "Image": "icons/actionState"
-        }
-      ],
-      "Tooltip": "Sample Action",
-      "UUID": "com.lcrespom.cpu.sample-action"
-    }
-  ]
+	"Name": "com.lcrespom.cpu",
+	"Author": "Luis Crespo (lcrespom@gmail.com)",
+	"Description": "A CPU meter",
+	"Icon": "./icons/pluginIcon",
+	"Version": "1.0.0",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "5.0"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.11"
+		}
+	],
+	"CodePathMac": "com.lcrespom.cpu",
+	"Actions": [
+		{
+			"Icon": "icons/actionIcon",
+			"Name": "CPU History",
+			"States": [
+				{
+					"Image": "icons/actionState"
+				}
+			],
+			"Tooltip": "Sample Action",
+			"UUID": "com.lcrespom.cpu.sample-action"
+		}
+	]
 }
