@@ -43,6 +43,7 @@ let height = 0
 let cpuPos = 0
 let sysColor: string
 let usrColor: string
+let totalCPU: Load
 
 function makeSVG(l: Load): string {
 	cpuHistory[cpuPos] = l
@@ -71,7 +72,13 @@ function makeLine(x: number, l: Load) {
 export function historySVG(): string {
 	let loads = cpuLoads()
 	if (!loads) return ''
-	return makeSVG(totalLoad(loads))
+	totalCPU = totalLoad(loads)
+	return makeSVG(totalCPU)
+}
+
+export function totalCPUPercentage(): string {
+	let total = totalCPU.user + totalCPU.sys + totalCPU.idle
+	return '' + Math.round((100 * (totalCPU.user + totalCPU.sys)) / total) + ' %'
 }
 
 export function initHistory(w: number, h: number, sysCol = '#F00', usrCol = '#0F0') {

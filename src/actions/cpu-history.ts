@@ -1,7 +1,7 @@
 import { Action, AppearDisappearEvent, BaseAction, KeyEvent } from '@stream-deck-for-node/sdk'
 import { sd } from '../index'
 import { log } from '../log'
-import { initHistory, historySVG } from './cpuload'
+import { initHistory, historySVG, totalCPUPercentage } from './cpuload'
 
 @Action('cpu-history')
 export class SampleAction extends BaseAction {
@@ -22,6 +22,6 @@ export class SampleAction extends BaseAction {
 		let svg = historySVG()
 		if (!svg) return
 		sd.setImage(ctx, 'data:image/svg+xml;charset=utf8,' + svg)
-		//sd.setTitle(ctx, 'X ' + ++counter)
+		sd.setTitle(ctx, totalCPUPercentage())
 	}
 }
