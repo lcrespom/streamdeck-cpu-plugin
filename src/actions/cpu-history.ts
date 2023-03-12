@@ -9,7 +9,7 @@ export class SampleAction extends BaseAction {
 
 	onAppear(e: AppearDisappearEvent) {
 		log('Appear ' + JSON.stringify(e))
-		initHistory(144, 144)
+		initHistory(72, 72)
 		this.intervalId = setInterval(_ => this.updateButton(e.context), 1000)
 	}
 
