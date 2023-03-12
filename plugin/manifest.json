@@ -24,8 +24,8 @@
 					"Image": "icons/actionState"
 				}
 			],
-			"Tooltip": "Sample Action",
-			"UUID": "com.lcrespom.cpu.sample-action"
+			"Tooltip": "CPU History",
+			"UUID": "com.lcrespom.cpu.cpu-history"
 		}
 	]
 }

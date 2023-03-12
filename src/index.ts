@@ -4,7 +4,7 @@ import { log } from './log'
 log(`-----\nWelcome to cpu-plugin`)
 log(`Arguments: ${JSON.stringify(process.argv)}`)
 
-import './actions/sample'
+import './actions/cpu-history'
 import { StreamDeck } from '@stream-deck-for-node/sdk'
 
 interface PluginSettings {
