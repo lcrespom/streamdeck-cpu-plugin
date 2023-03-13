@@ -1,4 +1,4 @@
-import { Action, AppearDisappearEvent, BaseAction, KeyEvent } from '@stream-deck-for-node/sdk'
+import { Action, AppearDisappearEvent, BaseAction } from '@stream-deck-for-node/sdk'
 import { sd } from '../index'
 import { log } from '../log'
 import { initHistory, historySVG, totalCPUPercentage } from './cpuload'
